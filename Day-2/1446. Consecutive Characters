@@ -1,0 +1,17 @@
+int maxPower(char * s){
+    int len=strlen(s);
+    int count=0,max_count=0,prev=' ';
+    for(int i=0;i<len;i++)
+    {
+        if(s[i]==prev)
+        {
+            count++;
+        }
+        else{
+            count=1;
+            prev=s[i];
+        }
+        max_count=(max_count<count)?count:max_count;
+    }
+    return max_count;
+}
